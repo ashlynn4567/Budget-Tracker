@@ -47,3 +47,21 @@ self.addEventListener("activate", function(e) {
         })
     );
 });
+
+// fetch data using service worker
+self.addEventListener("fetch", function (e) {
+    console.log("fetch request : " + e.request.url);
+    e.respondWith(
+        caches.match(e.request).then(function (request) {
+            // if cache exists, respond with cache
+            if (request) {
+                console.log("responding with cache : " + e.request.url);
+                return request;
+            // if no cache exists, fetch request
+            } else {
+                console.log("file is not cached, fetching : " + e.request.url);
+                return fetch(e.request);
+            };
+        })
+    );
+});
