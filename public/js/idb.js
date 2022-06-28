@@ -1,5 +1,5 @@
 let db;
-const request = indexedDB.open("budget-tracker", 1);
+const request = indexedDB.open("budget_tracker", 1);
 
 // if database verion changes, reload object store
 request.onupgradeneeded = function(e) {
@@ -17,10 +17,12 @@ request.onsuccess = function(e) {
     };
 };
 
+// run error handling for database
 request.onerror = function(e) {
     console.log(e.target.errorCode);
 };
 
+// save transaction if no internet connection exists
 function saveRecord(record) {
     // open new transaction
     const transaction = db.transaction(["new_transaction"], "readwrite");

@@ -4,9 +4,10 @@ const CACHE_NAME = APP_PREFIX + VERSION;
 
 const FILES_TO_CACHE = [
     './index.html',
-    './css/style.css',
+    './css/styles.css',
     './js/idb.js',
     './js/index.js',
+    "./manifest.json",
     './icons/icon-72x72.png',
     './icons/icon-96x96.png',
     './icons/icon-128x128.png',
@@ -31,7 +32,7 @@ self.addEventListener("install", function(e) {
 self.addEventListener("activate", function(e) {
     e.waitUntil(
         caches.keys().then(function (keyList) {
-            let cacheKeeplist = keyList.fileter(function (key) {
+            let cacheKeeplist = keyList.filter(function (key) {
                 return key.indexOf(APP_PREFIX);
             });
             cacheKeeplist.push(CACHE_NAME);
@@ -48,7 +49,7 @@ self.addEventListener("activate", function(e) {
     );
 });
 
-// fetch data using service worker
+// intercept fetch requests with service worker
 self.addEventListener("fetch", function (e) {
     console.log("fetch request : " + e.request.url);
     e.respondWith(
