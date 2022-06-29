@@ -7,7 +7,6 @@ const compression = require("compression");
 // establish port connection
 const PORT = process.env.PORT || 3001;
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/budget";
-
 // instantiate application
 const app = express();
 
