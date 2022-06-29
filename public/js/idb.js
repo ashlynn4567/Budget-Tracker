@@ -55,7 +55,7 @@ function uploadTransaction() {
                 if (serverResponse.message) {
                     throw new Error(serverResponse);
                 };
-                const transaction = db.transaction(["new_transaction", "readwrite"]);
+                const transaction = db.transaction(["new_transaction"], "readwrite");
                 const transactionObjectStore = transaction.objectStore("new_transaction");
 
                 // clear store
