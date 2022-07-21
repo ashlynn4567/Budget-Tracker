@@ -19,7 +19,7 @@ With this new verison of the application, users can now add expenses and deposit
 
 ## Deployed Site
 
-Follow [this link](https://stormy-tor-74755.herokuapp.com/) to view and use our site!
+Follow [this link](https://stormy-tor-74755.herokuapp.com/) to view and use my site!
 
 ## Features
 
@@ -104,7 +104,7 @@ In the future, I would like to add the following improvements:
 - It would be cool to add a feature where users can sync their bank accounts so that their budget updates automatically with each transaction.
 - Down the road, I'd like to add more involved graphs or features that help the user analyze their spending habits over time.
 
-I'm always interested in refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach our development team at the links below.
+I'm always interested in refactoring code to improve it's functionality. If you would like to suggest your own improvements, you can reach me at the links below.
 
 - <a href="mailto:ashlynn4567@gmail.com">Email</a>
 - <a href="https://github.com/ashlynn4567">GitHub</a>
